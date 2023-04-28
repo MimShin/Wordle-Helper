@@ -45,11 +45,11 @@ func main() {
 			d.Undo()
 			fmt.Println(d)
 		case "a":
-			fmt.Printf("filtering: word=%s, key=%s\n", words[1], words[2])
-			if len(words[1]) != len(words[2]) {
+			if len(words) < 3 || len(words[1]) != len(words[2]) {
 				fmt.Println("invalid input, word and key must have the same length")
 				break
 			}
+			fmt.Printf("filtering: word=%s, key=%s\n", words[1], words[2])
 			d.Filter(words[1], words[2])
 			fmt.Println(d)
 		default:
